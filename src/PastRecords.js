@@ -1,6 +1,3 @@
-
-
-
 class PastRecords {
   history = [];
   constructor() {
