@@ -35,7 +35,7 @@ const switchRoutes = (
   </Switch>
 );
 
-class Dashboard extends React.Component {
+class Admin extends React.Component {
   state = {
     image: image,
     color: "blue",
@@ -123,8 +123,8 @@ class Dashboard extends React.Component {
   }
 }
 
-Dashboard.propTypes = {
+Admin.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(dashboardStyle)(Dashboard);
+export default withStyles(dashboardStyle)(Admin);

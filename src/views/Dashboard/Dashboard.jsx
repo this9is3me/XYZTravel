@@ -22,8 +22,8 @@ import TableList from "views/TableList/TableList.jsx";
 import AllStatusIcon from "@material-ui/icons/List";
 import PendingIcon from "@material-ui/icons/HourglassEmpty";
 import CompletedIcon from "@material-ui/icons/CheckCircle";
-import MoneyIcon from "@material-ui/icons/AttachMoney";
 import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
+import PastRecords from "PastRecords.js";
 
 class Dashboard extends React.Component {
   state = {
@@ -38,7 +38,7 @@ class Dashboard extends React.Component {
   };
   render() {
     const { classes } = this.props;
-    
+
     return (
       <div>
         <h3 style={{ top: "0px", position: "absolute" }}>Dashboard</h3>
@@ -68,7 +68,9 @@ class Dashboard extends React.Component {
                   <PendingIcon />
                 </CardIcon>
                 <p className={classes.cardCategory}>Pending Application</p>
-                <h3 className={classes.cardTitle}>1</h3>
+                <h3 className={classes.cardTitle}>
+                  {PastRecords.numPendingRecords()}
+                </h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
@@ -86,7 +88,9 @@ class Dashboard extends React.Component {
                   <CompletedIcon />
                 </CardIcon>
                 <p className={classes.cardCategory}>Completed Applications</p>
-                <h3 className={classes.cardTitle}>2</h3>
+                <h3 className={classes.cardTitle}>
+                  {PastRecords.numProcessedRecords()}
+                </h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
